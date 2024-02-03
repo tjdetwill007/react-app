@@ -1,13 +1,9 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: .\dist
     destination: /home/ec2-user/dist
-permissions:
-  - object: ./scripts/
-    pattern: "**"
-    owner: ec2-user
-    mode: 777
+file_exists_behavior: OVERWRITE
 hooks:
   BeforeInstall:
     - location: scripts/stop_service.sh
