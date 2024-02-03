@@ -2,19 +2,16 @@ version: 0.0
 os: linux
 files:
   - source: .\dist
-    destination: /home/ec2-user/dist
+    destination: /usr/share/nginx/html
 file_exists_behavior: OVERWRITE
 hooks:
   BeforeInstall:
     - location: scripts/stop_service.sh
       timeout: 300
       runas: root
-  InstallApplication:
+  AfterInstall:
     - location: scripts/make_changes.sh
       timeout: 300
-      runas: root
-  # CleaningFiles:
-  #   - location: scripts/clean.sh
-  #     timeout: 300
+      runas: root 
 
       
