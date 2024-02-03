@@ -12,8 +12,8 @@ hooks:
     - location: scripts/make_changes.sh
       timeout: 300
       
-  # ApplicationStart:
-  #   - location: scripts/start_server.sh
+  # CleaningFiles:
+  #   - location: scripts/clean.sh
   #     timeout: 300
 
       

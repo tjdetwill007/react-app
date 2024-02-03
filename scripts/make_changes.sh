@@ -7,3 +7,5 @@ else
   echo "Copy failed"
   exit 1
 fi
+echo "Running server"
+systemctl start nginx
