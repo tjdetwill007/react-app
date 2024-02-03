@@ -3,15 +3,20 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/dist
+permissions:
+  - object: /home/ec2-user/dist/scripts/
+    pattern: "**"
+    owner: ec2-user
+    mode: 777
 hooks:
   BeforeInstall:
     - location: scripts/stop_service.sh
       timeout: 300
-    
+      runas: root
   InstallApplication:
     - location: scripts/make_changes.sh
       timeout: 300
-      
+      runas: root
   # CleaningFiles:
   #   - location: scripts/clean.sh
   #     timeout: 300
