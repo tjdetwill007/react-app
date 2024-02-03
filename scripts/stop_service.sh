@@ -3,7 +3,7 @@ echo "Stopping the service"
 sudo systemctl stop nginx
 echo "Nginx server stopped"
 echo "Cleaning files"
-rm -rf /usr/share/ngix/html/*
+rm -rf /usr/share/nginx/html/*
 if [ $? -eq 0 ]; then
   echo "Success delete"
 else
